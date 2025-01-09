@@ -21,20 +21,27 @@ const prezzoKm=0.21;
 
 //FASE DI ELABORAZIONE
 let prezzoTot=kmDaPercorrere * prezzoKm;
+let sconto;
 let prezzoScontato;
+
+console.log(`${prezzoTot}`);
 
 
 
 //FASE DI OUTPUT
 if(etaPasseggero < 18){
-prezzoScontato= (prezzoTot * 20) / 100;
+sconto= (prezzoTot * 20) / 100;
+prezzoScontato = prezzoTot - sconto;
+
 console.log(`visto che sei minorenne hai diritto al 20% di sconto, ecco il prezzo scontato! ${prezzoScontato.toFixed(2)} euro. Altrimenti avresti pagato ${prezzoTot.toFixed(2)} euro.`)
 }
 else if(etaPasseggero > 65){
-prezzoScontato= (prezzoTot * 40) / 100;
+sconto= (prezzoTot * 40) / 100;
+prezzoScontato = prezzoTot - sconto;
 console.log(`visto che hai più di 65 anni, hai diritto al 40% di sconto, ecco il prezzo scontato! ${prezzoScontato.toFixed(2)} euro. Altrimenti avresti pagato ${prezzoTot.toFixed(2)} euro.`)
 }
 else{
-    console.log(`il prezzo ammonta a: ${prezzoTot}`);
+    console.log(`il prezzo ammonta a: ${prezzoTot.toFixed(2)} euro.`);
 }
+
 
